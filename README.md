@@ -4,7 +4,7 @@ This repository contains the source code for a personal 3D portfolio built with 
 
 Live site: [https://github.com/Shivam-S-Ramoliya](https://github.com/Shivam-S-Ramoliya)
 
-![Portfolio Preview](public/images/preview1.png)
+![Portfolio Preview](frontend/public/images/Preview1.png)
 
 ## Table of Contents
 
