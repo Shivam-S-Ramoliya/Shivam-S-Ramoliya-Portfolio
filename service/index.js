@@ -43,6 +43,11 @@ app.get('/', (req, res) => {
   res.send('Shivam Portfolio Secure Email Service API is running.');
 });
 
+// Health check endpoint for cron jobs / uptime monitoring
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'Server is Runnig!', timestamp: new Date() });
+});
+
 // Endpoint to generate and send OTP, storing it in MongoDB
 app.post('/api/send-otp', async (req, res) => {
   const { recipientEmail } = req.body;
