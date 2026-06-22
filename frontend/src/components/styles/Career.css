@@ -1,0 +1,330 @@
+.career-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 1;
+  height: auto;
+  margin: auto;
+  margin-bottom: 150px;
+  padding: 120px 0px;
+}
+
+.career-section h2 {
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #0d9488, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.career-section h2 > span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+
+.career-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Tab Styles */
+.career-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.career-tab-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.career-tab-btn:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.career-tab-btn.active {
+  background: linear-gradient(90deg, #00d2ff 0%, #7f00ff 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.45);
+  font-weight: 600;
+}
+
+/* Timeline Layout */
+.career-timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.career-item {
+  display: flex;
+  position: relative;
+  gap: 32px;
+}
+
+/* Timeline Track & Node */
+.career-timeline-line {
+  position: relative;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  align-self: stretch;
+  margin-left: 20px;
+}
+
+.career-timeline-dot {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #a5f3fc;
+  border: 2px solid #00d2ff;
+  box-shadow: 0 0 10px #00d2ff, 0 0 20px #7f00ff;
+  transition: all 0.3s ease;
+}
+
+.career-item:hover .career-timeline-dot {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 15px #00d2ff, 0 0 30px #7f00ff;
+}
+
+/* Card Styles */
+.career-card {
+  display: flex;
+  background: rgba(13, 16, 23, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 28px;
+  gap: 28px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.career-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.career-card-logo {
+  width: 130px;
+  height: 130px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.career-card-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.career-logo-placeholder {
+  font-size: 40px;
+}
+
+.career-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.career-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.career-card-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.career-card-titles h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.career-company {
+  color: #00d2ff;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.career-location {
+  color: #9ca3af;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.career-card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.career-period {
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  color: #00d2ff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(0, 210, 255, 0.04);
+}
+
+.career-gpa {
+  border: 1px solid rgba(127, 0, 255, 0.3);
+  color: #c084fc;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(127, 0, 255, 0.04);
+}
+
+.career-description {
+  color: #9ca3af;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 300;
+}
+
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.career-tag {
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.15);
+  color: #00d2ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 1400px) {
+  .career-section h2 {
+    font-size: 55px;
+    line-height: 55px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .career-card {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .career-card-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .career-logo-placeholder {
+    font-size: 28px;
+  }
+
+  .career-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .career-card-meta {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .career-section {
+    padding: 80px 0px;
+    margin-bottom: 50px;
+  }
+
+  .career-section h2 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .career-item {
+    gap: 16px;
+  }
+
+  .career-timeline-line {
+    margin-left: 8px;
+  }
+
+  .career-card {
+    padding: 20px;
+  }
+
+  .career-card-titles h3 {
+    font-size: 20px;
+  }
+
+  .career-company, .career-location {
+    font-size: 14px;
+  }
+}
