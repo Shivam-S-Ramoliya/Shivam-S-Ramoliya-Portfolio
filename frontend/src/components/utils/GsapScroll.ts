@@ -86,19 +86,10 @@ export function setCharTimeline(
           0
         )
         .to(character.rotation, { y: 0.92, x: 0.12, delay: 3, duration: 3 }, 0)
-        .to(neckBone!.rotation, { x: 0.6, delay: 2, duration: 3 }, 0)
-        .to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0)
-        .to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0)
         .fromTo(
           ".what-box-in",
           { display: "none" },
           { display: "flex", duration: 0.1, delay: 6 },
-          0
-        )
-        .fromTo(
-          monitor.position,
-          { y: -10, z: 2 },
-          { y: 0, z: 0, delay: 1.5, duration: 3 },
           0
         )
         .fromTo(
@@ -107,6 +98,22 @@ export function setCharTimeline(
           { opacity: 0, scale: 0, y: "-70%", duration: 5, delay: 2 },
           0.3
         );
+
+      if (neckBone) {
+        tl2.to(neckBone.rotation, { x: 0.6, delay: 2, duration: 3 }, 0);
+      }
+      if (monitor) {
+        tl2.to(monitor.material, { opacity: 1, duration: 0.8, delay: 3.2 }, 0)
+           .fromTo(
+             monitor.position,
+             { y: -10, z: 2 },
+             { y: 0, z: 0, delay: 1.5, duration: 3 },
+             0
+           );
+      }
+      if (screenLight) {
+        tl2.to(screenLight.material, { opacity: 1, duration: 0.8, delay: 4.5 }, 0);
+      }
 
       tl3
         .fromTo(
@@ -144,31 +151,32 @@ export function setAllTimeline() {
   });
   careerTimeline
     .fromTo(
-      ".career-timeline",
+      ".career-timeline-line",
       { maxHeight: "10%" },
       { maxHeight: "100%", duration: 0.5 },
       0
     )
 
     .fromTo(
-      ".career-timeline",
+      ".career-timeline-line",
       { opacity: 0 },
       { opacity: 1, duration: 0.1 },
       0
     )
     .fromTo(
-      ".career-info-box",
+      ".career-card",
       { opacity: 0 },
       { opacity: 1, stagger: 0.1, duration: 0.5 },
       0
     )
     .fromTo(
-      ".career-dot",
-      { animationIterationCount: "infinite" },
+      ".career-timeline-dot",
+      { scale: 0.5, opacity: 0.5 },
       {
-        animationIterationCount: "1",
+        scale: 1,
+        opacity: 1,
         delay: 0.3,
-        duration: 0.1,
+        duration: 0.3,
       },
       0
     );

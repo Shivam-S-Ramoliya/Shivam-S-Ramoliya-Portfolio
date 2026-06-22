@@ -47,7 +47,7 @@ const Scene = () => {
       let screenLight: any | null = null;
       let mixer: THREE.AnimationMixer;
 
-      const clock = new THREE.Clock();
+      let lastTime = performance.now();
 
       const light = setLighting(scene);
       let progress = setProgress((value) => setLoading(value));
@@ -119,7 +119,9 @@ const Scene = () => {
           );
           light.setPointLight(screenLight);
         }
-        const delta = clock.getDelta();
+        const currentTime = performance.now();
+        const delta = (currentTime - lastTime) / 1000;
+        lastTime = currentTime;
         if (mixer) {
           mixer.update(delta);
         }
